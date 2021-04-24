@@ -1,0 +1,15 @@
+.panel
+  %h3= I18n.t('event_report', scope: 'active_admin.reports')
+  .panel_contents
+    %table#bonus-dsl-table
+      %thead
+        %tr
+          %th= I18n.t('date', scope: 'active_admin.reports')
+          %th= I18n.t('event', scope: 'active_admin.reports')
+          %th= I18n.t('count', scope: 'active_admin.reports')
+      %tbody
+        - collection.each do |row|
+          %tr
+            %td= row.year.to_i
+            %td= row.event
+            %td= row.count

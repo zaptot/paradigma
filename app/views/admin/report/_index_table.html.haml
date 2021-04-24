@@ -1,0 +1,13 @@
+.panel
+  %h3= I18n.t('all_reports', scope: 'active_admin.reports')
+  .panel_contents
+    %table#bonus-dsl-table
+      %thead
+        %tr
+          %th= I18n.t('report_name', scope: 'active_admin.reports')
+          %th= I18n.t('url', scope: 'active_admin.reports')
+      %tbody
+        - [{ name: 'event_report', url: admin_event_report_url }, { name: 'disorder_report', url: admin_disorder_report_url }].each do |row|
+          %tr
+            %td= I18n.t(row[:name], scope: 'active_admin.reports')
+            %td= link_to(row[:url], row[:url])

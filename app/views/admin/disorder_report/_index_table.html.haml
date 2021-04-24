@@ -1,0 +1,15 @@
+.panel
+  %h3= I18n.t('disorder_report', scope: 'active_admin.reports')
+  .panel_contents
+    %table#bonus-dsl-table
+      %thead
+        %tr
+          %th= I18n.t('date', scope: 'active_admin.reports')
+          %th= I18n.t('disorder', scope: 'active_admin.reports')
+          %th= I18n.t('count', scope: 'active_admin.reports')
+      %tbody
+        - collection.each do |row|
+          %tr
+            %td= row.date
+            %td= row.disorder.title
+            %td= row.count
