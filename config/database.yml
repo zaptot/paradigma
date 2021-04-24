@@ -6,8 +6,9 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
-  database: paradigma_dev
+  url: 'postgres://rjksziqzsxijlj:dda679d1e8e895d3b355f3d45655b8fbfe1cf99bd76668b36d6eb3df9df2f0ac@ec2-52-209-134-160.eu-west-1.compute.amazonaws.com:5432/d7ccl3h2r79qio'
+  user: rjksziqzsxijlj
+  database: d7ccl3h2r79qio
 
 test:
   <<: *default
@@ -15,5 +16,6 @@ test:
 
 production:
   <<: *default
-  database: paradigma_prod
-  username: paradigma
+  url: 'postgres://rjksziqzsxijlj:dda679d1e8e895d3b355f3d45655b8fbfe1cf99bd76668b36d6eb3df9df2f0ac@ec2-52-209-134-160.eu-west-1.compute.amazonaws.com:5432/d7ccl3h2r79qio'
+  user: rjksziqzsxijlj
+  database: d7ccl3h2r79qio

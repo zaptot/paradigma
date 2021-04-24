@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2021_04_18_041840) do
   create_table "schedules", force: :cascade do |t|
     t.bigint "child_id"
     t.bigint "employee_id"
-    t.string "days", default: "{}"
+    t.string "days"
     t.string "time"
     t.string "form"
     t.index ["child_id"], name: "index_schedules_on_child_id"
